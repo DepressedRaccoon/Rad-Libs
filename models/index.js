@@ -11,11 +11,11 @@ MadLib.belongsTo(User, {
 });
 
 MadLib.hasMany(Blanks, {
-    foreignKey: 'madLib_id',
+    foreignKey: 'madlib_id',
 });
 
 Blanks.belongsTo(MadLib, {
-    foreignKey: 'madLib_id',
+    foreignKey: 'madlib_id',
 });
 
 module.exports = { User, MadLib, Blanks };
