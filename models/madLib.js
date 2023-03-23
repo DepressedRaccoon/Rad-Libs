@@ -16,6 +16,10 @@ MadLib.init(
             allowNull: false, 
             unique: false,
         },
+        template_name:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -29,7 +33,7 @@ MadLib.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'madLib',
+        modelName: 'madlib',
     },
 );
 
