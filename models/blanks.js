@@ -16,7 +16,7 @@ Blanks.init(
             allowNull: false, 
             // unique: false,
         },
-        madLib_id: {
+        madlib_id: {
             type: DataTypes.INTEGER,
             references: {
               model: 'madLib',
@@ -29,6 +29,14 @@ Blanks.init(
               model: 'user',
               key: 'id',
             },
+        },
+        content: { //word in the blank
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        order: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
     },
     {
