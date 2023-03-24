@@ -1,1 +1,3 @@
-// Helper function code here...
+module.exports = {
+    // insert helper functions here
+};
