@@ -36,10 +36,64 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get one Madlib (incomplete)
-router.get('/madlibs/:id', async (req,res) => {
-    
-})
+// Get one MadLibInstance (incomplete)
+router.get('/radlibs/:id', async (req,res) => {
+    try {
+        const madLibId = req.params.id;
+        const inputData = await UserInput.findAll({
+            where: {
+                'madlib_instance_id': madLibId,
+            },
+        });
+
+        const inputs = inputData.map((blank) => {
+            return blank.get({ plain: true });
+        });
+
+        // TODO: Remove
+        console.log(inputs);
+
+        const madLibInstance = await MadLibInstance.findByPk(madLibId, {
+            include: [
+                { 
+                    model: MadLibForm,
+                    attributes: [
+                        'title', 'template_name' 
+                    ],     
+                },
+            ],
+            plain: true,
+        });
+
+        if (!madLibInstance) {
+            res.status(404).json({
+                message: `RadLib with id ${madLibId} not found.`,
+            });
+            // exit
+            return;
+        }
+
+        // convert to a plain js object
+        const madLib = madLibInstance.get({ plain: true });
+        
+        // TODO: Remove
+        console.log("***template***", madLib.madlib_form.template_name);
+
+        res.render('madlib', {
+            // whichTemplate must be a function for handlebars dynamic partials
+            whichPartial: function() { 
+                return madLib.madlib_form.template_name; 
+            },
+            title: madLib.madlib_form.title,
+            blanks: inputs,
+            // logged_in: req.session.logged_in,
+        });            
+
+    } catch (err) {
+        console.error(err);
+        res.status(400).json(err);
+    }
+});
 
 // Get login route 
 

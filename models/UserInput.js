@@ -22,7 +22,7 @@ UserInput.init(
                 key: 'id',
             },
         },
-        model_instance_id: {
+        madlib_instance_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'madlib_instance',
