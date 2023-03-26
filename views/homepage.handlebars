@@ -1,1 +1,8 @@
-{{!-- insert homepage work here --}}
+{{!-- Temporary example homepage just to get something on the page --}}
+{{#each userMadLibs as |madlib|}}
+<div class="user-radlib">
+    <h3>{{madlib.madlib_form.title}}</h3>
+    <small>by {{madlib.user.name}}</small>
+    <p>{{madlib.completed_text}}</p>
+</div>
+{{/each}}

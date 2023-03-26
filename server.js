@@ -6,13 +6,15 @@ const routes = require('./controllers');
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
-const SequelizeMadLib = require('connect-session-sequelize')(session.MadLib);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 // const hbs = exphbs.create({ helpers });
+// Temporary set-up of handlebars w/o helpers on following line:
+const hbs = exphbs.create();
 
 const sess = {
   secret: 'Super secret secret',
@@ -24,7 +26,7 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeMadLib({
+  store: new SequelizeStore({
     db: sequelize
   })
 };
@@ -37,7 +39,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
