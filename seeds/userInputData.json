@@ -1,0 +1,152 @@
+[
+    {
+        "content": "jump",
+        "madlib_instance_id": 1,
+        "blank_id": 1
+    },
+    {
+        "content": "dog",
+        "madlib_instance_id": 1,
+        "blank_id": 2
+    },
+    {
+        "content": "quickly",
+        "madlib_instance_id": 1,
+        "blank_id": 3
+    },
+    {
+        "content": "table",
+        "madlib_instance_id": 1,
+        "blank_id": 4
+    },
+    {
+        "content": "slowly",
+        "madlib_instance_id": 1,
+        "blank_id": 5
+    },
+    {
+        "content": "lawn",
+        "madlib_instance_id": 1,
+        "blank_id": 6
+    },
+    {
+        "content": "thrust",
+        "madlib_instance_id": 2,
+        "blank_id": 1
+    },
+    {
+        "content": "pen",
+        "madlib_instance_id": 2,
+        "blank_id": 2
+    },
+    {
+        "content": "darkly",
+        "madlib_instance_id": 2,
+        "blank_id": 3
+    },
+    {
+        "content": "sink",
+        "madlib_instance_id": 2,
+        "blank_id": 4
+    },
+    {
+        "content": "sloppily",
+        "madlib_instance_id": 2,
+        "blank_id": 5
+    },
+    {
+        "content": "barrel",
+        "madlib_instance_id": 2,
+        "blank_id": 6
+    },
+    {
+        "content": "Wendy",
+        "madlib_instance_id": 3,
+        "blank_id": 7
+    },
+    {
+        "content": "tired",
+        "madlib_instance_id": 3,
+        "blank_id": 8
+    },
+    {
+        "content": "frog",
+        "madlib_instance_id": 3,
+        "blank_id": 9
+    },
+    {
+        "content": "tire",
+        "madlib_instance_id": 3,
+        "blank_id": 10
+    },
+    {
+        "content": "orange",
+        "madlib_instance_id": 3,
+        "blank_id": 11
+    },
+    {
+        "content": "cloud",
+        "madlib_instance_id": 3,
+        "blank_id": 12
+    },
+    {
+        "content": "the courthouse",
+        "madlib_instance_id": 3,
+        "blank_id": 13
+    },
+    {
+        "content": "run",
+        "madlib_instance_id": 3,
+        "blank_id": 14
+    },
+    {
+        "content": "cry",
+        "madlib_instance_id": 3,
+        "blank_id": 15
+    },
+    {
+        "content": "Clarice",
+        "madlib_instance_id": 4,
+        "blank_id": 7
+    },
+    {
+        "content": "fast",
+        "madlib_instance_id": 4,
+        "blank_id": 8
+    },
+    {
+        "content": "squirrel",
+        "madlib_instance_id": 4,
+        "blank_id": 9
+    },
+    {
+        "content": "brick",
+        "madlib_instance_id": 4,
+        "blank_id": 10
+    },
+    {
+        "content": "grey",
+        "madlib_instance_id": 4,
+        "blank_id": 11
+    },
+    {
+        "content": "pencil",
+        "madlib_instance_id": 4,
+        "blank_id": 12
+    },
+    {
+        "content": "the movie theater",
+        "madlib_instance_id": 4,
+        "blank_id": 13
+    },
+    {
+        "content": "jump",
+        "madlib_instance_id": 4,
+        "blank_id": 14
+    },
+    {
+        "content": "swim",
+        "madlib_instance_id": 4,
+        "blank_id": 15
+    }
+]

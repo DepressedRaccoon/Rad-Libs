@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Row, Row, Row Your Boat",
+        "template_name": "row-row",
+        "text": "[1, a verb], [1, a verb], [1, a verb] your [2, a noun], [3, an adverb] down the [4, a noun], [5, an adverb], [5, an adverb], [5, an adverb], [5, an adverb], life is but a [6, a noun]!",
+        "num_blanks": 6
+
+    },
+    {
+        "id": 2,
+        "title": "Mary Had a Little Lamb",
+        "template_name": "mary-lamb",
+        "text": "[1, a girl's name] had a [2, an adjective] [3, an animal], it's [4, a noun] was [5, a color] as [6, a noun], and everywhere that [1, a girl's name] went, the [3, an animal] was sure to go! It followed her to [7, a place] one day, which was against the rules. It made the children [8 a verb] and [9, a verb] to see a [3, an animal] at [7, a place]!",
+        "num_blanks": 9
+    }
+]

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class MadLib extends Model {}
+class UserInput extends Model {}
 
-MadLib.init(
+UserInput.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,30 +11,31 @@ MadLib.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false, 
-            unique: false,
-        },
-        template_name:{
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_id: {
+        blank_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'id',
+                model: 'blank',
+                key: 'id',
+            },
+        },
+        madlib_instance_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'madlib_instance',
+                key: 'id',
             },
         },
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'madlib',
+        modelName: 'user_input',
     },
 );
 
-module.exports = MadLib;
+module.exports = UserInput;

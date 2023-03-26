@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "completed_text": "Jump, jump, jump the dog, quickly down the table, slowly, slowly, slowly, slowly, life is but a lawn!",
+        "user_id": 1,
+        "madlib_form_id": 1
+    },
+    {
+        "id": 2,
+        "completed_text": "Thrust, thrust, thrust the pen, darkly down the sink, slopily, slopily, slopily, slopily, life is but a barrel!",
+        "user_id": 2,
+        "madlib_form_id": 1
+    },
+    {
+        "id": 3,
+        "completed_text": "Wendy had a tired frog, it's tire was orange as cloud, and everywhere that Wendy went, her frog was sure to go! It followed her to the courthouse one day, which was against the rules.It made the children run and cry, to see a frog at the courthouse!",
+        "user_id": 4,
+        "madlib_form_id": 2
+    },
+    {
+        "id": 4,
+        "completed_text": "Clarice had a fast squirrel, it's brick was grey as pencil, and everywhere that clarice went, the squirrel was sure to go! It followed her to the movie theater one day, which was against the rules. It made the children jump and swim, to see a squirrel at the movie theater!",
+        "user_id": 3,
+        "madlib_form_id": 2
+    }
+]
