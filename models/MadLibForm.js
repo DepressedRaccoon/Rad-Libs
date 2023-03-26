@@ -26,7 +26,7 @@ MadLibForm.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-            defaultValue: 'NULL',
+            defaultValue: null,
             references: {
                 model: 'user',
                 key: 'id',

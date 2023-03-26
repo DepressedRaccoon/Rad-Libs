@@ -25,7 +25,7 @@ UserInput.init(
         model_instance_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'model_instance',
+                model: 'madlib_instance',
                 key: 'id',
             },
         },

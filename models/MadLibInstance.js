@@ -38,3 +38,5 @@ MadLibInstance.init(
         modelName: 'madlib_instance',
     },
 );
+
+module.exports = MadLibInstance;
