@@ -1,0 +1,77 @@
+[
+    {
+        "part_of_speech": "a verb",
+        "order": 1,
+        "madlib_form_id": 1,
+    },
+    {
+        "part_of_speech": "a noun",
+        "order": 2,
+        "madlib_form_id": 1,
+    },
+    {
+        "part_of_speech": "an adverb",
+        "order": 3,
+        "madlib_form_id": 1,
+    },
+    {
+        "part_of_speech": "a noun",
+        "order": 4,
+        "madlib_form_id": 1
+    },
+    {
+        "part_of_speech": "an adverb",
+        "order": 5,
+        "madlib_form_id": 1
+    },
+    {
+        "part_of_speech": "a noun",
+        "order": 6,
+        "madlib_form_id": 1
+    },
+    {
+        "part_of_speech": "a girl's name",
+        "order": 1,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "an adjective",
+        "order": 2,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "an animal",
+        "order": 3,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a noun",
+        "order": 4,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a color",
+        "order": 5,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a noun",
+        "order": 6,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a place",
+        "order": 7,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a verb",
+        "order": 8,
+        "madlib_form_id": 2
+    },
+    {
+        "part_of_speech": "a verb",
+        "order": 9,
+        "madlib_form_id": 2
+    }
+]
