@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class MadLib extends Model {}
+class MadLibForm extends Model {}
 
-MadLib.init(
+MadLibForm.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,28 +13,31 @@ MadLib.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false, 
-            unique: false,
-        },
-        template_name:{
-            type: DataTypes.STRING,
             allowNull: false,
+        },
+        template_name: {
+            type: DataTypes.STRING,
+        },
+        text: {
+            type: DataTypes.TEXT,
+        },
+        num_blanks: {
+            type: DataTypes.INTEGER,
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'id',
+                model: 'user',
+                key: 'id',
             },
         },
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'madlib',
-    },
+        modelName: 'madlib_form',
+    }
 );
 
-module.exports = MadLib;
+module.exports = MadLibForm;

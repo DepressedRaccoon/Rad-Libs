@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Blanks extends Model {}
+class UserInput extends Model {}
 
-Blanks.init(
+UserInput.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,41 +11,31 @@ Blanks.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        typeOfSpeech: {
-            type: DataTypes.STRING,
-            allowNull: false, 
-            // unique: false,
-        },
-        madlib_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'madLib',
-              key: 'id',
-            },
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'id',
-            },
-        },
-        content: { //word in the blank
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        order: {
+        blank_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'blank',
+                key: 'id',
+            },
+        },
+        model_instance_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'model_instance',
+                key: 'id',
+            },
         },
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blanks',
+        modelName: 'user_input',
     },
 );
 
-module.exports = Blanks;
+module.exports = UserInput;
