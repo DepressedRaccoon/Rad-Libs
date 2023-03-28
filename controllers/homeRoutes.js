@@ -76,7 +76,15 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
 
         // convert to a plain js object
         const madLib = madLibInstance.get({ plain: true });
-        
+
+        let isCompletedTextEmpty = true;
+        if (madLib.completed_text) {
+            isCompletedTextEmpty = false;
+        }
+
+        // TODO: Remove
+        console.log(madLib); 
+
         res.render('madlib', {
             // whichTemplate must be a function for handlebars dynamic partials
             whichPartial: function() { 
@@ -84,6 +92,8 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
             },
             title: madLib.madlib_form.title,
             blanks: inputs,
+            radlibId: madLib.id,
+            isCompletedTextEmpty, 
             logged_in: req.session.logged_in,
         });            
 

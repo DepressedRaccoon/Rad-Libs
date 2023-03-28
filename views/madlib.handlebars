@@ -1,2 +1,18 @@
 {{!-- completed madlib here --}}
+{{#if isCompletedTextEmpty }}
+<div class="text-center">
+<div class="alert alert-primary" role="alert" id="save-success">
+</div>
+</div>
+{{/if}}
+
+<div id="radlib-{{ radlibId }}" class="radlib-completed">
 {{> (whichPartial) }}
+</div>
+
+{{#if isCompletedTextEmpty }}
+<div class="text-center">
+    <button class="btn btn-primary" type="button" id="save-completed-text">Save Text</button>
+</div>
+<script src="/js/saveInstanceText.js"></script>
+{{/if}}

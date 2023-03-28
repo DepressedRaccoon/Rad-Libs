@@ -99,7 +99,7 @@ router.put(
 
             res.status(200).json({
                 success: true,
-                message: `Successfully added text to radlib with id ${instanceId}.`
+                message: `Successfully saved text to radlib with id ${instanceId}.`
             });
         }  catch (err) {
             console.error(err);
