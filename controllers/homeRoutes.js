@@ -107,9 +107,6 @@ router.get('/radlibs/form/:id', async (req, res) => {
             return blank.get({plain : true})
         });
 
-        // req.session.madLibInstanceId = req.params.id
-        console.log(blanks);
-
         res.render('radlib-form', {
             title: madLibFormData.dataValues.title,
             blanks,
