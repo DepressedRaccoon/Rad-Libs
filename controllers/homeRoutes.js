@@ -104,6 +104,10 @@ router.get('/radlibs/form/:id', async (req, res) => {
             where: { madlib_form_id: formId },
         });
 
+        // Store MadLibForm's id on session for use by
+        // POST /api/radlibs controller (./api/radLibRoutes.js)
+        req.session.madLibFormId = formId;
+
         const blanks = blanksData.map((blank) => {
             return blank.get({plain : true})
         });

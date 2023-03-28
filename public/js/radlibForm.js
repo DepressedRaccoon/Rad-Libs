@@ -14,7 +14,7 @@ const radlibFormHandler = async (event) => {
     if (inputElements) {
         const response = await fetch('/api/radlibs/', {
             method: 'POST',
-            body: JSON.stringify(content),
+            body: JSON.stringify({ inputs: content }),
             headers: { 'Content-Type': 'application/json' },
         });
 
