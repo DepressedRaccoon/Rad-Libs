@@ -1,0 +1,12 @@
+{{!-- title - string, blanks - [blanks] --}}
+<form id="radlib">
+    {{#each blanks as |blank|}}
+    <div class="form-group">
+        <label for="{{blank.id}}">{{blank.part_of_speech}}</label>
+        <input type="text" id="{{blank.id}}" placeholder="{{blank.part_of_speech}}">
+    </div>
+    {{/each}}
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>

@@ -95,6 +95,13 @@ router.get('/radlibs/:id', async (req,res) => {
     }
 });
 
+router.post('/radlibs/form/:id', async (req, res) => {
+    try {
+        const formId = req.params.id;
+    } catch (err) {
+        console.error(err);
+    }
+}); 
 // Get login route 
 
 router.get('/login', (req,rest) => {
