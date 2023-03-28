@@ -1,1 +1,22 @@
-/* Start code here... */
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.row {
+    align-content: center;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    float: none;
+    margin: auto;
+}
+
+footer {
+    border-top: 5px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
