@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             userMadLibs,
-            // logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         console.error(err);
@@ -37,8 +37,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get one MadLibInstance (incomplete)
-router.get('/radlibs/:id', async (req,res) => {
+// Get one MadLibInstance 
+router.get('/radlibs/:id', withAuth, async (req,res) => {
     try {
         const madLibId = req.params.id;
         const inputData = await UserInput.findAll({
@@ -77,9 +77,6 @@ router.get('/radlibs/:id', async (req,res) => {
         // convert to a plain js object
         const madLib = madLibInstance.get({ plain: true });
         
-        // TODO: Remove
-        console.log("***template***", madLib.madlib_form.template_name);
-
         res.render('madlib', {
             // whichTemplate must be a function for handlebars dynamic partials
             whichPartial: function() { 
@@ -87,7 +84,7 @@ router.get('/radlibs/:id', async (req,res) => {
             },
             title: madLib.madlib_form.title,
             blanks: inputs,
-            // logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in,
         });            
 
     } catch (err) {
@@ -96,9 +93,28 @@ router.get('/radlibs/:id', async (req,res) => {
     }
 });
 
-router.post('/radlibs/form/:id', async (req, res) => {
+router.get('/radlibs/form/:id', withAuth, async (req, res) => {
     try {
         const formId = req.params.id;
+        const madLibFormData = await MadLibForm.findByPk(formId);
+        const blanksData = await Blank.findAll({
+            where: { madlib_form_id: formId },
+        });
+
+        // Store MadLibForm's id on session for use by
+        // POST /api/radlibs controller (./api/radLibRoutes.js)
+        req.session.madLibFormId = formId;
+
+        const blanks = blanksData.map((blank) => {
+            return blank.get({plain : true})
+        });
+
+        res.render('radlib-form', {
+            title: madLibFormData.dataValues.title,
+            blanks,
+            logged_in: req.session.logged_in,
+        });
+
     } catch (err) {
         console.error(err);
     }

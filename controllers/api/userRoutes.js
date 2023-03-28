@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
     try {
         const dbUserData = await User.findOne({
             where: {
-            username: req.body.username,
+                name: req.body.username,
             },
         });
 
@@ -48,7 +48,8 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.loggedIn = true; 
+            req.session.logged_in = true; 
+            req.session.user_id = dbUserData.id;
 
             res
             .status(200)
@@ -64,14 +65,12 @@ router.post('/login', async (req, res) => {
 
 // Logout 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end(); 
         });
     } else {
-        res
-        .status(404).end()
-        .json({message: 'Logout failed!'}); 
+        res.status(404).end(); 
     }
 });
 

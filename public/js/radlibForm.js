@@ -6,15 +6,15 @@ const radlibFormHandler = async (event) => {
     let content = []
     for (const input of inputElements){
         const value = input.value.trim();
-        const blankId = input.getAttribute('id');
-
+        const blankId = input.getAttribute('id').split("-")[1];
+        
         content.push({content: value, blank_id: blankId});
     }
 
     if (inputElements) {
         const response = await fetch('/api/radlibs/', {
             method: 'POST',
-            body: JSON.stringify(content),
+            body: JSON.stringify({ inputs: content }),
             headers: { 'Content-Type': 'application/json' },
         });
 
