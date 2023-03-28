@@ -1,40 +1,40 @@
-{{!-- Temporary example homepage just to get something on the page --}}
-{{!-- {{#each userMadLibs as |madlib|}}
-<div class="user-radlib">
-    <h3>{{madlib.madlib_form.title}}</h3>
-    <small>by {{madlib.user.name}}</small>
-    <p>{{madlib.completed_text}}</p>
-</div>
-{{/each}} --}}
+<body>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Welcome to Radlibs</h1>
-    <p class="lead">Radlibs is our own personal version of ad-libs. A game where you insert words into poems or stories to bring to life a new creation of your own.</p>
-    <p><strong>Getting Started?</strong></p>
-    <p> To get started with Radlibs, simply click "play now" on a game of your choice.</p>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Welcome to RadLibs</h1>
+      <p class="lead">A game where you insert words into poems or stories to bring to life a new creation of your own.</p>
+      <p>
+        <strong>Getting Started?</strong><br>To get started with RadLibs, simply click "play now" on a game of your choice
+      </p>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card text-center border-primary">
+{{!-- Card for RadLib instance Mary Had A Little Lamb --}}
+  <div class="row">
+    <div class="card border-primary" style="width: 18rem;">
+      <img src="../public/img/lamb.jpeg" class="card-img-top" alt="a side headshot of a white lamb outside">
       <div class="card-body">
-        <h5 class="card-title">Mary Had a Little Lamb</h5>
-        <p class="card-text">Play game by yourself or with friends!</p>
+        <h5 class="card-title">Mary Had A Little Lamb</h5>
+        <p class="card-text">Create a RadLib using the children's song "Mary Had A Little Lamb." What silly combinations can be produced?</p>
+        <a href="#" class="btn btn-primary">Play Now</a>
+      </div>
+    </div>
+
+{{!-- Card for RadLib instance Row Row Row Your Boat --}}
+    <div class="card border-primary" style="width: 18rem;">
+      <img src="../src/public/row-row.jpeg" class="card-img-top" alt="a canoe floating on water with an adult and two children rowing">
+      <div class="card-body">
+        <h5 class="card-title">Row, Row, Row Your Boat</h5>
+        <p class="card-text">Create a RadLib using the children's song "Row, Row, Row Your Boat." What silly combinations can be produced?</p>
         <a href="#" class="btn btn-primary">Play Now</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card text-center border-primary">
-      <div class="card-body">
-        <h5 class="card-title">Row Row Row Your Boat</h5>
-        <p class="card-text">Play game by yourself or with friends!</p>
-        <a href="#" class="btn btn-primary">Play Now</a>
-      </div>
-    </div>
-  </div>
-</div>
+
+</body>
+
+
+
 
 
