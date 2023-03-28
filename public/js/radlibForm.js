@@ -24,6 +24,7 @@ const radlibFormHandler = async (event) => {
             document.location.replace(`/radlibs/${id}`);
         } else {
             console.error (response.statusText);
+            alert('Please fill all blanks!');
         }
     }
 };
