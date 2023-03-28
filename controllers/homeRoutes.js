@@ -81,7 +81,10 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
         if (madLib.completed_text) {
             isCompletedTextEmpty = false;
         }
-        
+
+        // TODO: Remove
+        console.log(madLib); 
+
         res.render('madlib', {
             // whichTemplate must be a function for handlebars dynamic partials
             whichPartial: function() { 
