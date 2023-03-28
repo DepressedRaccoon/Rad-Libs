@@ -104,7 +104,7 @@ router.post('/radlibs/form/:id', async (req, res) => {
 }); 
 // Get login route 
 
-router.get('/login', (req,rest) => {
+router.get('/login', (req,res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return; 
