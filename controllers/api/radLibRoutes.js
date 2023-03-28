@@ -18,7 +18,7 @@ const { body, validationResult } = require('express-validator');
 //  to save the completed content of the radlib.
 router.post(
     '/', 
-    //withAuth,
+    withAuth,
     body('inputs').isArray(),
     body('inputs.*.content').not().isEmpty().trim().escape(),
     body('inputs.*.blank_id').not().isEmpty().isInt(),
@@ -60,14 +60,15 @@ router.post(
         }
 });
 
-// Use PUT to add completed_text to the MadLibInstance
-// if user so chooses. Send information to the client JS
-// that indicates whether MadLibInstance with :id has
-// a completed_text.  If completed_text is NULL, show
-// the user a save button.
+// User had chosen to save the completed text of this radlib
+// by clicking the 'save' button on /radlibs/:id page.
+// 1. Retrieve the MadLibInstance by id.
+// 2. Populate the completed_text column on MadLibInstance
+//  with the text displayed on the page (which is constructed
+//  in a template using the MadLibInstance's child UserInputs)
 router.put(
     '/:id', 
-    //withAuth,
+    withAuth,
     body('completed_text').not().isEmpty().trim().escape(),
     async (req, res) => {
         const errors = validationResult(req);
