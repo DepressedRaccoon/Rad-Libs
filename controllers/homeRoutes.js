@@ -95,9 +95,26 @@ router.get('/radlibs/:id', async (req,res) => {
     }
 });
 
-router.post('/radlibs/form/:id', async (req, res) => {
+router.get('/radlibs/form/:id', async (req, res) => {
     try {
         const formId = req.params.id;
+        const madLibFormData = await MadLibForm.findByPk(formId);
+        const blanksData = await Blank.findAll({
+            where: { madlib_form_id: formId },
+        });
+
+        const blanks = blanksData.map((blank) => {
+            return blank.get({plain : true})
+        });
+
+        // req.session.madLibInstanceId = req.params.id
+        console.log(blanks);
+
+        res.render('radlib-form', {
+            title: madLibFormData.dataValues.title,
+            blanks,
+        });
+
     } catch (err) {
         console.error(err);
     }

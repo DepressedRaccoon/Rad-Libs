@@ -2,8 +2,8 @@
 <form id="radlib">
     {{#each blanks as |blank|}}
     <div class="form-group">
-        <label for="{{blank.id}}">{{blank.part_of_speech}}</label>
-        <input type="text" class="radlib-input" id="{{blank.id}}" placeholder="{{blank.part_of_speech}}">
+        <label for="blank-{{blank.id}}">{{blank.part_of_speech}}</label>
+        <input type="text" class="radlib-input form-control" id="blank-{{blank.id}}" placeholder="{{blank.part_of_speech}}">
     </div>
     {{/each}}
     <div class="form-group">
