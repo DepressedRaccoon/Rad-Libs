@@ -7,6 +7,7 @@ const {
     MadLibInstance,
     UserInput,
 } = require('../models'); 
+const { DESCRIBE } = require('sequelize/types/query-types.js');
 
 // Get all info for homepage (incomplete)
 router.get('/', async (req, res) => {
@@ -129,14 +130,36 @@ router.get('/radlibs/form/:id', withAuth, async (req, res) => {
         console.error(err);
     }
 }); 
-// Get login route 
 
+// Get login route 
 router.get('/login', (req,res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return; 
     }
     res.render('login');
+});
+
+// Get all RadLibs created by a user
+router.get ('/radlibs', withAuth, async (req, res) => {
+    try {
+        const inputData = await UserInput.findAll({
+            include: [
+                {
+                    model: MadLibInstance,
+                }
+            ],
+            where: {
+                'completed_text': notNull,
+                'order': DESC,
+            },
+        });
+        const inputs = inputData.get({ plain: true });
+        res.render('inputs', { inputs, loggedIn: req.session.loggedIn });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router; 
