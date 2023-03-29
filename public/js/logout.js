@@ -1,5 +1,6 @@
 // logout fetch API client JS
-const logout = async () => {
+const logout = async (e) => {
+    e.preventDefault(); 
     // not sure if this is the right route to fetch, but this is what they look like on the activities from last week
     const response = await fetch('/api/users/logout', {
         method: 'POST',

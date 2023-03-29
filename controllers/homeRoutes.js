@@ -7,7 +7,6 @@ const {
     MadLibInstance,
     UserInput,
 } = require('../models'); 
-const { DESCRIBE } = require('sequelize/types/query-types.js');
 
 // Get all info for homepage (incomplete)
 router.get('/', async (req, res) => {
