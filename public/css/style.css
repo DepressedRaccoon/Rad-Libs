@@ -1,10 +1,12 @@
 .card {
-    margin: 0 auto; 
-    float: none; 
-    margin-bottom: 10px; 
+    display: inline-block; 
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
 }
 
 .row {
+    display: inline-block; 
     align-content: center;
 }
 
@@ -15,8 +17,27 @@
     margin: auto;
 }
 
-footer {
-    border-top: 5px;
-    margin-top: 30px;
-    margin-left: 10px;
-}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .random {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50vh;
+    padding: 50px 0;
+    /* Additional styles for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto; /* Add 50px margin to top and bottom, center horizontally */
+  }
+  
+  
