@@ -1,10 +1,24 @@
 # Rad-Libs
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Description
-RadLibs is a full stack application utilizing a responsive front end and an express.js back end. RadLibs allows a user to sign up, log in, and create silly stories called RadLibs. The RadLibs can be saved, and the user may go back and read their previously created RadLibs to entertain the masses. 
+## Table of Contents
+* [License](#license)
+* [Description](#description)
+* [Technologies](#technologies-used)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Support](#support-documentation)
+* [Development](#ideas-for-future-development)
+* [Contribution](#contribution)
+* [Credits](#credits)
 
-Technoligies used:
+## License
+Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+
+## Description
+RadLibs is a full stack application utilizing a responsive front end and an express.js back end. RadLibs allows a user to sign up, log in, and create silly stories called RadLibs. The RadLibs can be saved, and the user may go back and read their previously created RadLibs to entertain the masses. We were motivated to create this application because we enjoy games and having fun with friends. We think our project stands out because it has a clean and tidy UI, along with readable code for easy future development.
+
+## Technologies used:
 - Bootstrap
 - Node 
 - MySQL
@@ -37,12 +51,12 @@ Upon page load, the user will sign in or sign up to the app and create RadLibs, 
 - Allow teams to see all RadLibs created
 - Offer a delete button if a user does not like their RadLib
 
+## Contribution
+Thank you for investing your time in reading through our code and README. Since we are creating this application for a coding bootcamp we are not taking contributions at this time.
+
 ## Credits
 KU Coding Boot Camp collaboration project. Team members include:
 - [Chris Rathmel](https://github.com/kitrath)
-- [Cole Hartkop](https://github.com/zencoh)
+- [Cole Hartkopp](https://github.com/zencoh)
 - [Rebecca Lehew](https://github.com/rebeccalehew)
 - [Steven Chafin](https://github.com/SChafinIII)
-
-## License
-Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
