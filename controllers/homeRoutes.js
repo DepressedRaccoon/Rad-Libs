@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth.js');
+const { Op } = require('sequelize');
 const {
     User, 
     MadLibForm,
@@ -131,21 +132,35 @@ router.get('/login', (req,res) => {
 });
 
 // Get all RadLibs created by a user
-router.get ('/radlibs', withAuth, async (req, res) => {
+router.get('/radlibs', withAuth, async (req, res) => {
     try {
-        const inputData = await UserInput.findAll({
+        const madLibInstanceData = await MadLibInstance.findAll({
+            where: {
+                completed_text: {
+                    [Op.ne]: null,
+                },
+            },
             include: [
                 {
-                    model: MadLibInstance,
-                }
+                    model: User,
+                    attributes: [ 'name' ],
+                },
+                {
+                    model: MadLibForm,
+                    attributes: [ 'title' ],
+                },
             ],
-            where: {
-                'completed_text': notNull,
-                'order': DESC,
-            },
         });
-        const inputs = inputData.get({ plain: true });
-        res.render('inputs', { inputs, loggedIn: req.session.loggedIn });
+
+        const madLibInstances = madLibInstanceData.map((madlib) => {
+            return madlib.get({ plain: true });
+        });
+
+        res.render('completed-radlibs', {
+            logged_in: req.session.logged_in,
+            radlibs: madLibInstances,
+        });
+
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
