@@ -14,8 +14,9 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
+        
             // if signup successful send to homepage
-            document.location.replace('/homepage');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
