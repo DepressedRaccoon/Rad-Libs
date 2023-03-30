@@ -95,6 +95,27 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
     }
 });
 
+// RadLibs menu route. Use to render link in navbar
+router.get('/radlibs/form/all', withAuth, async (req, res) => {
+    try {
+        const madLibFormData = await MadLibForm.findAll({
+            attributes: ['id', 'title']
+        });
+
+        const madLibForms = madLibFormData.map((madlib) => {
+            return madlib.get({ plain: true });
+        });
+
+        res.render('radlibs-menu', {
+            logged_in: req.session.logged_in,
+            radlibs: madLibForms,
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+
 router.get('/radlibs/form/:id', withAuth, async (req, res) => {
     try {
         const formId = req.params.id;
@@ -161,27 +182,6 @@ router.get('/radlibs', withAuth, async (req, res) => {
             radlibs: madLibInstances,
         });
 
-    } catch (err) {
-        console.error(err);
-        res.status(500).json(err);
-    }
-});
-
-// RadLibs menu route
-router.get('/radlibs/form/all', withAuth, async (req, res) => {
-    try {
-        const madLibFormData = await MadLibForm.findAll({
-            attributes: ['id', 'title']
-        });
-
-        const madLibForms = madLibFormData.map((madlib) => {
-            return madlib.get({ plain: true });
-        });
-
-        res.render('radlibs-menu', {
-            logged_in: req.session.logged_in,
-            radlibs: madLibForms,
-        });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
