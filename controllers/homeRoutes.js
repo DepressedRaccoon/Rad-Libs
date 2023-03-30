@@ -167,4 +167,25 @@ router.get('/radlibs', withAuth, async (req, res) => {
     }
 });
 
+// RadLibs menu route
+router.get('/radlibs/form/all', withAuth, async (req, res) => {
+    try {
+        const madLibFormData = await MadLibForm.findAll({
+            attributes: ['id', 'title']
+        });
+
+        const madLibForms = madLibFormData.map((madlib) => {
+            return madlib.get({ plain: true });
+        });
+
+        res.render('radlibs-menu', {
+            logged_in: req.session.logged_in,
+            radlibs: madLibForms,
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router; 
