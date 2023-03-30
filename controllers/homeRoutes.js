@@ -95,7 +95,7 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
     }
 });
 
-// RadLibs menu route
+// RadLibs menu route. Use to render link in navbar
 router.get('/radlibs/form/all', withAuth, async (req, res) => {
     try {
         const madLibFormData = await MadLibForm.findAll({
