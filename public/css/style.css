@@ -36,5 +36,19 @@
     justify-content: center;
     margin: 50px auto; /* Add 50px margin to top and bottom, center horizontally */
   }
+
+  .libs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* set the font size to 20 pixels */
+    width: 50%;
+    height: 50vh;
+    padding: 50px 0;
+    /* Additional styles for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto; /* Add 50px margin to top and bottom, center horizontally */
+  }
   
   
