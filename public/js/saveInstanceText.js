@@ -19,10 +19,8 @@ const saveInstanceText = async (e) => {
     const divElem = document.querySelector(".radlib-completed");
     const id = divElem.getAttribute("id").split("-")[1];
 
-    // TODO: check id
     const p = document.querySelector('.radlib-completed > p');
     const text = p.textContent.trim();
-    console.log("in click handler, text:", text);
 
     try {
         const response = await fetch(`/api/radlibs/${id}`, {

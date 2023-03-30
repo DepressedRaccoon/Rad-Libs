@@ -24,9 +24,6 @@ router.get('/', async (req, res) => {
             return madLib.get({ plain: true });
         });
 
-        // TODO: Remove
-        console.log(userMadLibs);
-
         res.render('homepage', {
             userMadLibs,
             logged_in: req.session.logged_in,
@@ -50,9 +47,6 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
         const inputs = inputData.map((blank) => {
             return blank.get({ plain: true });
         });
-
-        // TODO: Remove
-        console.log(inputs);
 
         const madLibInstance = await MadLibInstance.findByPk(madLibId, {
             include: [
@@ -81,9 +75,6 @@ router.get('/radlibs/:id', withAuth, async (req,res) => {
         if (madLib.completed_text) {
             isCompletedTextEmpty = false;
         }
-
-        // TODO: Remove
-        console.log(madLib); 
 
         res.render('madlib', {
             // whichTemplate must be a function for handlebars dynamic partials
