@@ -12,9 +12,14 @@
 </div>
 
 {{#if isCompletedTextEmpty }}
-<div class="text-center">
+<div class="text-center btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
     <button class="btn btn-primary" type="button" id="save-completed-text">Save Text</button>
+    </div>
+    <script src="/js/saveInstanceText.js"></script>
+    <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <a href="/radlibs/form/all"><button class="btn btn-primary" type="button"> Play Again</button></a>
+    </div>
 </div>
-<script src="/js/saveInstanceText.js"></script>
 {{/if}}
 </div>
