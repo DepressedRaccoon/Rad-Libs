@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+        {{#each radlibs as |radlib|}}
+        <p style="font-size: 1.4rem;"><a href="/radlibs/form/{{ radlib.id }}">{{ radlib.title}}</a></p>
+        {{/each}}
+        </div>
+    </div>
+</div>
