@@ -1,0 +1,54 @@
+.card {
+    display: inline-block; 
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 50px; /* add margin equal to footer height */
+}
+
+.row {
+    display: inline-block; 
+    align-content: center;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    float: none;
+    margin: auto;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .random {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50vh;
+    padding: 50px 0;
+    /* Additional styles for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto; /* Add 50px margin to top and bottom, center horizontally */
+  }
+
+  .libs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* set the font size to 20 pixels */
+    width: 50%;
+    height: 50vh;
+    padding: 50px 0;
+    /* Additional styles for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto; /* Add 50px margin to top and bottom, center horizontally */
+  }
+  
+  

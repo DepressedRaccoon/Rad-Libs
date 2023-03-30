@@ -1,21 +1,43 @@
-const User = require('./user');
-const MadLib = require('./madLib');
-const Blanks = require('./blanks');
+const User = require('./User');
+const MadLibForm = require('./MadLibForm');
+const Blank = require('./Blank');
+const UserInput = require('./UserInput');
+const MadLibInstance = require('./MadLibInstance');
 
-User.hasMany(MadLib, {
+User.hasMany(MadLibForm, {
     foreignKey: 'user_id',
 });
+MadLibForm.belongsTo(User);
 
-MadLib.belongsTo(User, {
+MadLibForm.hasMany(Blank, {
+    foreignKey: 'madlib_form_id',
+});
+Blank.belongsTo(MadLibForm);
+
+User.hasMany(MadLibInstance, {
     foreignKey: 'user_id',
 });
+MadLibInstance.belongsTo(User);
 
-MadLib.hasMany(Blanks, {
-    foreignKey: 'madLib_id',
+MadLibForm.hasMany(MadLibInstance, {
+    foreignKey: 'madlib_form_id',
 });
+MadLibInstance.belongsTo(MadLibForm);
 
-Blanks.belongsTo(MadLib, {
-    foreignKey: 'madLib_id',
+Blank.hasMany(UserInput, {
+    foreignKey: 'blank_id',
 });
+UserInput.belongsTo(Blank);
 
-module.exports = { User, MadLib, Blanks };
+MadLibInstance.hasMany(UserInput, {
+    foreignKey: 'madlib_instance_id',
+});
+UserInput.belongsTo(MadLibInstance);
+
+module.exports = {
+    User,
+    MadLibForm,
+    Blank,
+    UserInput,
+    MadLibInstance,
+};
