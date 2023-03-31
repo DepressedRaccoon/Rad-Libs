@@ -40,6 +40,7 @@ The app includes a package.json file. Use the steps below to prepare your machin
 - ```npm run watch```
 
 ## Usage
+
 Upon page load, the user will sign in or sign up to the app and create RadLibs, our version of ad-libs. The user will input words/designated parts of speech through a form into a database. The user will submit their words (POST request) and a GET request will retrieve their completed RadLib based on the template chosen.
 
 ![Screenshot](./public/img/login-signup.png)
