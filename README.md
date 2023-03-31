@@ -1,6 +1,8 @@
 # Rad-Libs
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+![Screenshot](./public/img/rad-libs.png)
+
 ## Table of Contents
 * [License](#license)
 * [Description](#description)
@@ -38,21 +40,27 @@ The app includes a package.json file. Use the steps below to prepare your machin
 - ```npm run watch```
 
 ## Usage
-Upon page load, the user will sign in or sign up to the app and create RadLibs, our version of ad-libs. The user will input words/designated parts of speech through a form into a database. The user will submit their words (POST request), and GET request will retrieve their completed RadLib based on the template chosen.
+Upon page load, the user will sign in or sign up to the app and create RadLibs, our version of ad-libs. The user will input words/designated parts of speech through a form into a database. The user will submit their words (POST request) and a GET request will retrieve their completed RadLib based on the template chosen.
+
+![Screenshot](./public/img/login-signup.png)
+![Screenshot](./public/img/radlib-form.png)
+![Screenshot](./public/img/created-radlib.png)
 
 ## Support Documentation
 - [Wireframe](https://docs.google.com/presentation/d/1p85Mem2GVpNCIsrWFuEKMGp7R_b7PnW1oEGkWgsKe-E/edit?usp=sharing)
 - [User Story](https://docs.google.com/document/d/1wdFSLSm2UdIUqSKtJf7X4xEJtY0F_Edoyj9FBBVCezU/edit?usp=sharing)
 - [Presentation](https://docs.google.com/presentation/d/1Z-ebyzibI_ibEakBGLJKuPitFa_E5qMQyyUplaB3_ac/edit#slide=id.p)
+- [Rad-Libs on Heroku](https://rad-libs.herokuapp.com/)
 
 ## Ideas for Future Development
 - Create a user profile page
 - Allow users to create teams
 - Allow teams to see all RadLibs created
 - Offer a delete button if a user does not like their RadLib
+- Connect with a web API to validate the user input's part of speech
 
 ## Contribution
-Thank you for investing your time in reading through our code and README. Since we are creating this application for a coding bootcamp we are not taking contributions at this time.
+Thank you for investing your time in reading through our code and README. Since we are creating this application for a coding boot camp we are not taking contributions at this time.
 
 ## Credits
 KU Coding Boot Camp collaboration project. Team members include:
